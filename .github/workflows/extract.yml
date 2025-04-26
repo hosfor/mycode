@@ -19,3 +19,11 @@ jobs:
         run: |
           mkdir -p extracted_files
           unzip Multi-Hospital.zip -d extracted_files
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "hosfor"
+          git config --global user.email "hosfor@gmail.com"
+          git add extracted_files
+          git commit -m "Added extracted files"
+          git push
